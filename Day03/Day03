@@ -1,0 +1,38 @@
+#随机数生成猜数字
+# import random
+# number = random.randint(1, 100)  # 生成1到100之间的随机整数
+# while True:   
+#     guess = int(input("请输入你猜的数字(1-100):"))
+#     if guess < number:
+#         print("太小了，请再试一次！")
+#     elif guess > number:
+#         print("太大了，请再试一次！")
+#     else:
+#         print("恭喜你，猜对了！")
+#         break
+
+    #使用字典制作一个学生管理系统
+students = {'张三': 20, '李四': 22, '王五': 21}  # 创建一个空字典来存储学生信息
+while True:
+    print("欢迎使用学生管理系统！")
+    print("1. 添加学生")
+    print("2. 查看学生")
+    print("3. 退出")
+    choice = input("请输入您的选择(1/2/3):")
+    if choice == '1':
+        name = input("请输入学生姓名:")
+        age = int(input("请输入学生年龄:"))
+        students[name] = age  # 将学生姓名作为键，年龄作为值存储在字典中
+        print("学生添加成功！")
+    elif choice == '2':
+        if students:
+            print("学生信息如下：")
+            for name, age in students.items():
+                print(f"姓名: {name}, 年龄: {age}")
+        else:
+            print("没有学生记录！")
+    elif choice == '3':
+        print("感谢使用学生管理系统，再见！")
+        break
+    else:
+        print("输入错误，请重新输入！")
